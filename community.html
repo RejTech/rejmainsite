@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>RMS-锐机社媒</title>
+    <link rel="icon" href="files/images/rms-logo-rotating.svg">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/glass-navbar.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        .btn {
+            border-radius: 20px;
+        }
+        .navbar-toggler {
+            border-radius: 20px;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        .nav-item {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .nav-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .nav-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .nav-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        .nav-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        .nav-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        .nav-item:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+        .nav-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+        /* 椤甸潰鍐呭鍖哄潡鍔ㄧ敾 */
+        body > div.content-section {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        body > div.content-section:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+        body > div.content-section:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+        /* 鍗＄墖鍔ㄧ敾 */
+        .card {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .card:nth-child(1) {
+            animation-delay: 1.2s;
+        }
+        .card:nth-child(2) {
+            animation-delay: 1.3s;
+        }
+        .card:nth-child(3) {
+            animation-delay: 1.4s;
+        }
+        .card:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+        /* 图标进入动画 */
+        .icon-container {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .icon-container:nth-child(1) {
+            animation-delay: 1.6s;
+        }
+        .icon-container:nth-child(2) {
+            animation-delay: 1.7s;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar-container"></div>
+<script src="js/navbar-loader.js"></script>
+<div class="p-5 mb-4 bg-body-tertiary rounded-3 content-section">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">锐机社交媒体账号</h1>
+    </div>
+</div>
+<div class="container mt-4 content-section">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Bilibili 鍗＄墖 -->
+        <div class="col">
+            <div class="card h-100" style="border-radius: 20px;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img height="40" src="files/images/bilibili.png" width="40" class="me-3" style="border-radius: 10px;">
+                            <h5 class="card-title mb-0">Bilibili</h5>
+                        </div>
+                        <a class="btn btn-primary" href="https://space.bilibili.com/1162853749">立即前往</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Douyin 鍗＄墖 -->
+        <div class="col">
+            <div class="card h-100" style="border-radius: 20px;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img height="40" src="files/images/dy.jpeg" width="40" class="me-3" style="border-radius: 10px; object-fit: cover; object-position: center;">
+                            <h5 class="card-title mb-0">Douyin</h5>
+                        </div>
+                        <a class="btn btn-primary" href="https://www.douyin.com/user/MS4wLjABAAAAqmDDA-v1xWHl-rQptifCBioq8eR6UeFsuq8fMHo-qXY">立即前往</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col w-100">
+            <h5 class="card-title mb-0">Union成员</h5>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="border-radius: 20px;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img height="40" src="files/images/幻境星空-巡光ava.webp" width="40" class="me-3" style="border-radius: 10px; object-fit: cover; object-position: center;">
+                            <h5 class="card-title mb-0">UnrealStar虚幻星空</h5>
+                        </div>
+                        <a class="btn btn-primary" href="https://space.bilibili.com/3546891604200243">立即前往</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="border-radius: 20px;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <img height="40" src="files/images/CZMukafu末卡符ava.webp" width="40" class="me-3" style="border-radius: 10px; object-fit: cover; object-position: center;">
+                            <h5 class="card-title mb-0">Xtreme末郅影音</h5>
+                        </div>
+                        <a class="btn btn-primary" href="https://space.bilibili.com/1526785021">立即前往</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="mt-5 py-3 bg-light text-center">
+    <div class="version-container"></div>
+     <div style="display: flex; justify-content: center; gap: 20px; margin: 8px 0;">
+         <img src="files/images/DAEcn.png" alt="DAE" class="icon-container" style="height: 24px;">
+        <img src="files/images/MLScn.png" alt="MLS" class="icon-container" style="height: 24px;">
+     </div>
+     <a href="licenseview.html">Apache2.0许可证
+        ——版权所有 锐机科技2026</a>
+</footer>
+<script src="js/version-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary glass-navbar" style="position: fixed; top: 10px; left: 0; right: 0; z-index: 9999; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -5px 0 rgba(255, 255, 255, 0.2); border-radius: 30px ; margin: 0 20px;">
+    <div class="container-fluid">
+        <a class='navbar-brand' href='{{homeUrl}}'><img alt="" height="25" src="{{logoUrl}}" width="25"/>{{siteName}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a aria-current='page' class='nav-link {{homeActive}}' href='{{homeUrl}}'>{{homeText}}</a></li>
+                <li class="nav-item"><a class='nav-link {{communityActive}}' href='{{communityUrl}}'>{{communityText}}</a></li>
+                <li class="nav-item"><a class='nav-link {{videosActive}}' href='{{videosUrl}}'>{{videosText}}</a></li>
+                <li class="nav-item"><a class='nav-link {{liveActive}}' href='{{liveUrl}}'>{{liveText}}</a></li>
+                <li class="nav-item"><a class='nav-link {{aboutActive}}' href='{{aboutUrl}}'>{{aboutText}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://rfs.rjtec.site">{{fileStationText}}</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://rejclass.framer.website">{{classSiteText}}</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class='btn btn-secondary' href='{{languageUrl}}'>{{languageText}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

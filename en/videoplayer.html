@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Video Player - Rej Comprehensive Site</title>
+    <link rel="icon" href="../files/images/rms-logo-rotating.svg">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/glass-navbar.css" rel="stylesheet">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        .btn {
+            border-radius: 20px;
+        }
+        .navbar-toggler {
+            border-radius: 20px;
+        }
+        /* 确保导航栏不会覆盖播放器 */
+        .navbar {
+            z-index: 1030;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        .nav-item {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .nav-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .nav-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .nav-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        .nav-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        .nav-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        .nav-item:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+        .nav-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+        /* 页面内容区块动画 */
+        body > div.content-section {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        body > div.content-section:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+        .player-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+        .bilibili-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar-container" class="sticky-top"></div>
+<script src="../js/navbar-loader.js"></script>
+
+<div class="container mt-5 content-section">
+    <h1 class="mb-4">Video Player</h1>
+    
+    <div class="mb-4">
+        <a href="videos.html" class="btn btn-primary">Back to Video List</a>
+    </div>
+    
+    <div class="player-container mb-4">
+        <iframe id="bilibili-iframe" class="bilibili-player" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="mb-4">
+        <h2 id="video-title">Loading...</h2>
+        <p id="video-info" class="text-muted">Fetching video information...</p>
+    </div>
+</div>
+
+<footer class="mt-5 py-3 bg-light text-center">
+    <div class="version-container"></div>
+    <a href="licenseview.html">Apache2.0 License
+        ——Copyright RejTech 2026</a>
+</footer>
+
+<script src="../js/version-loader.js"></script>
+<script>
+    // Get video ID from URL
+    function getUrlParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+    
+    // Load video
+    function loadVideo() {
+        const bvid = getUrlParam('bvid');
+        if (!bvid) {
+            document.getElementById('video-title').textContent = 'Error: Video ID not found';
+            document.getElementById('video-info').textContent = 'Please select a video from the video list page';
+            return;
+        }
+        
+        // Set Bilibili player URL
+        const playerUrl = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1`;
+        document.getElementById('bilibili-iframe').src = playerUrl;
+        
+        // Set video title (can fetch real title from API if needed)
+        document.getElementById('video-title').textContent = `Video Player - ${bvid}`;
+        document.getElementById('video-info').textContent = `Playing video: ${bvid}`;
+    }
+    
+    // Load video when page is loaded
+    window.addEventListener('DOMContentLoaded', loadVideo);
+</script>
+</body>
+</html>

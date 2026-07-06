@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>视频播放 - 锐机综合站</title>
+    <link rel="icon" href="files/images/rms-logo-rotating.svg">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/glass-navbar.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        .btn {
+            border-radius: 20px;
+        }
+        .navbar-toggler {
+            border-radius: 20px;
+        }
+        /* 确保导航栏不会覆盖播放器 */
+        .navbar {
+            z-index: 1030;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        .nav-item {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .nav-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .nav-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .nav-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        .nav-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        .nav-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        .nav-item:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+        .nav-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+        /* 页面内容区块动画 */
+        body > div.content-section {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        body > div.content-section:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+        .player-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+        .bilibili-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar-container" class="sticky-top"></div>
+<script src="js/navbar-loader.js"></script>
+
+<div class="container mt-5 content-section">
+    <h1 class="mb-4">视频播放</h1>
+    
+    <div class="mb-4">
+        <a href="videos.html" class="btn btn-primary">返回视频列表</a>
+    </div>
+    
+    <div class="player-container mb-4">
+        <iframe id="bilibili-iframe" class="bilibili-player" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="mb-4">
+        <h2 id="video-title">加载中...</h2>
+        <p id="video-info" class="text-muted">正在获取视频信息...</p>
+    </div>
+</div>
+
+<footer class="mt-5 py-3 bg-light text-center">
+    <div class="version-container"></div>
+    <a href="licenseview.html">Apache2.0许可证
+        ——版权所有 锐机科技2026</a>
+</footer>
+
+<script src="js/version-loader.js"></script>
+<script>
+    // 从URL获取视频ID
+    function getUrlParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+    
+    // 加载视频
+    function loadVideo() {
+        const bvid = getUrlParam('bvid');
+        if (!bvid) {
+            document.getElementById('video-title').textContent = '错误：未找到视频ID';
+            document.getElementById('video-info').textContent = '请从视频列表页面选择视频';
+            return;
+        }
+        
+        // 设置Bilibili播放器URL
+        const playerUrl = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1`;
+        document.getElementById('bilibili-iframe').src = playerUrl;
+        
+        // 设置视频标题（这里可以根据需要从API获取真实标题）
+        document.getElementById('video-title').textContent = `视频播放 - ${bvid}`;
+        document.getElementById('video-info').textContent = `正在播放视频：${bvid}`;
+    }
+    
+    // 页面加载完成后加载视频
+    window.addEventListener('DOMContentLoaded', loadVideo);
+</script>
+</body>
+</html>

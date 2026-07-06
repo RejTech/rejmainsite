@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>RMS-Rej Comprehensive Site - Change Log</title>
+    <link rel="icon" href="../files/images/rms-logo-rotating.svg">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/glass-navbar.css" rel="stylesheet">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        .btn {
+            border-radius: 20px;
+        }
+        .navbar-toggler {
+            border-radius: 20px;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        @keyframes spinIn {
+            from {
+                opacity: 0;
+                transform: rotate(-360deg) scale(0.5);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+                filter: blur(0);
+            }
+        }
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .nav-item {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .nav-item:nth-child(1) { animation-delay: 0.1s; }
+        .nav-item:nth-child(2) { animation-delay: 0.2s; }
+        .nav-item:nth-child(3) { animation-delay: 0.3s; }
+        .nav-item:nth-child(4) { animation-delay: 0.4s; }
+        .nav-item:nth-child(5) { animation-delay: 0.5s; }
+        .nav-item:nth-child(6) { animation-delay: 0.6s; }
+        .nav-item:nth-child(7) { animation-delay: 0.7s; }
+        body > div {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        body > div:nth-child(2) { animation-delay: 0.8s; }
+        .changelog-container {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease forwards 1s;
+        }
+        .changelog-content {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .back-button {
+            animation: fadeInUp 0.6s ease forwards 1.2s;
+        }
+        .icon-container {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .icon-container:nth-child(1) {
+            animation-delay: 1.2s;
+        }
+        .icon-container:nth-child(2) {
+            animation-delay: 1.4s;
+        }
+    </style>
+</head>
+<body>
+<div id="navbar-container" class="sticky-top"></div>
+<script src="../js/navbar-loader.js"></script>
+
+<div class="container mt-5">
+    <h1 class="display-4 text-center mb-5">Change Log</h1>
+    <div class="changelog-container">
+        <div class="changelog-content">
+            <div class="section">
+                <p><strong>Date:</strong> 2026.04.04<br>
+                <strong>Version:</strong> 2026.04.04<br>
+                <strong>Version Number:</strong> γ.26.0404.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update optimizes animation sequence, synchronizes community page content, fixes video page errors, and adds video cover loading animation</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Added dynamic placeholder and loading animation for video covers<br>
+                        <ul>
+                            <li>Display 3-second dynamic placeholder when video covers are loading</li>
+                            <li>Images load below placeholder and display with smooth transition after loading</li>
+                            <li>Smooth fade-in and fade-out animation throughout</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Optimizations:</h3>
+                <ul>
+                    <li>Optimized animation sequence<br>
+                        <ul>
+                            <li>Set incremental animation delays for navbar items (0.1s - 0.7s)</li>
+                            <li>Set reasonable animation delays for content sections (0.8s, 1.0s)</li>
+                            <li>Set incremental animation delays for cards (1.2s - 1.5s)</li>
+                            <li>Set reasonable animation delays for icons (1.6s - 1.7s)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Synchronization:</h3>
+                <ul>
+                    <li>Synchronized community page content<br>
+                        <ul>
+                            <li>Synchronized 4 cards (Bilibili, Douyin, 幻境星空-巡光, CZMukafu末卡符ava) from Chinese version to English version</li>
+                            <li>Kept button text as "Go Now" in English version to match existing style</li>
+                            <li>Added "Union members" title</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Fixes:</h3>
+                <ul>
+                    <li>Fixed OpaqueResponseBlocking error on video pages<br>
+                        <ul>
+                            <li>Added referrer policy to videos.html</li>
+                            <li>Added mode: 'cors' option to fetch requests in videoApi.js</li>
+                        </ul>
+                    </li>
+                    <li>Simplified video page functionality<br>
+                        <ul>
+                            <li>Removed sorting toggle functionality to avoid sorting not changing issue</li>
+                            <li>Kept search and pagination functionality working normally</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Updated version number information<br>
+                        <ul>
+                            <li>Updated version number from γ.26.0403.1 to γ.26.0404.1</li>
+                            <li>Updated version number in Chinese about page (about.html)</li>
+                            <li>Updated version number and release date in English about page (en/about.html)</li>
+                            <li>Updated version number template file (components/version.html)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="section">
+                <p><strong>Date:</strong> 2026.04.03<br>
+                <strong>Version:</strong> 2026.04.03<br>
+                <strong>Version Number:</strong> β.26.0403.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update fixes multiple issues, enhances user experience, and adds video player page</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Added video player page<br>
+                        <ul>
+                            <li>public/videoplayer.html (Chinese version)</li>
+                            <li>public/en/videoplayer.html (English version)</li>
+                            <li>Use Bilibili embedded player to play videos</li>
+                            <li>Support passing video ID from video list page and automatic playback</li>
+                            <li>Provide link to return to video list</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Navbar componentization<br>
+                        <ul>
+                            <li>Created navbar.html template and navbar-loader.js script</li>
+                            <li>Implemented unified navbar management and automatic active state switching</li>
+                            <li>Support different paths for Chinese and English pages</li>
+                        </ul>
+                    </li>
+                    <li>Version number componentization<br>
+                        <ul>
+                            <li>Created version.html template and version-loader.js script</li>
+                            <li>Implemented unified version number management</li>
+                            <li>Support different paths for Chinese and English pages</li>
+                        </ul>
+                    </li>
+                    <li>Feedback functionality improvement<br>
+                        <ul>
+                            <li>Changed accordion component to Bootstrap Modal popup</li>
+                            <li>Added popup animation effect</li>
+                            <li>Ensure popup is displayed on top</li>
+                            <li>Removed background dimming effect</li>
+                        </ul>
+                    </li>
+                    <li>Video list page improvement<br>
+                        <ul>
+                            <li>Reduced number of cards displayed per page (from 20 to 9)</li>
+                            <li>Ensured all cards have animation effects</li>
+                            <li>Modified video links to play within the site</li>
+                            <li>Added placeholder for failed image loading</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Bug Fixes:</h3>
+                <ul>
+                    <li>Fixed issue where navbar was not displayed during local browsing</li>
+                    <li>Fixed issue where page became black during animation playback</li>
+                    <li>Fixed issue where window was blocked by black mask</li>
+                    <li>Fixed video API 404 error</li>
+                    <li>Fixed issue where navbar always expanded automatically in mobile view</li>
+                </ul>
+                
+                <h3>Visual Enhancements:</h3>
+                <ul>
+                    <li>Unified page design language<br>
+                        <ul>
+                            <li>Ensured video page design is consistent with other pages</li>
+                            <li>Added content-section class to ensure consistent animation effects</li>
+                        </ul>
+                    </li>
+                    <li>Improved animation effects<br>
+                        <ul>
+                            <li>Added dynamic animation delays for video cards</li>
+                            <li>Ensured all page elements have appropriate animation effects</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Technical Improvements:</h3>
+                <ul>
+                    <li>API call improvement<br>
+                        <ul>
+                            <li>Used local videoApi.js module to get video list</li>
+                            <li>Improved error handling and log output</li>
+                        </ul>
+                    </li>
+                    <li>Path handling improvement<br>
+                        <ul>
+                            <li>Dynamically adjusted resource file loading paths for different directory structures of Chinese and English pages</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="section">
+                <p><strong>Date:</strong> 2025.12.27<br>
+                <strong>Version:</strong> 2025.12.27<br>
+                <strong>Version Number:</strong> β.25.1227.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update adds LICENSE page, standardizes footer styling, enhances visual effects and user experience</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Added LICENSEView page<br>
+                        <ul>
+                            <li>public/licenseview.html (Chinese version)</li>
+                            <li>public/en/licenseview.html (English version)</li>
+                            <li>Include detailed license permission table explanation</li>
+                            <li>Maintain consistent style and animation effects with other pages</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Standardized footer styling<br>
+                        <ul>
+                            <li>Applied unified footer styling to all pages except video detail pages</li>
+                            <li>Used unified Bootstrap classes: mt-5 py-3 bg-light text-center</li>
+                        </ul>
+                    </li>
+                    <li>Copyright year update<br>
+                        <ul>
+                            <li>Updated copyright year from 2025 to 2026 on all pages</li>
+                        </ul>
+                    </li>
+                    <li>Enhanced footer with icons<br>
+                        <ul>
+                            <li>Added DAE icons to footer of main pages (language-matching)</li>
+                            <li>Added MLS icons in the same row as DAE icons</li>
+                            <li>Added entrance animations for both icon types</li>
+                        </ul>
+                    </li>
+                    <li>License link updates<br>
+                        <ul>
+                            <li>Updated LICENSE links to point to interactive licenseview.html page</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Technical Improvements:</h3>
+                <ul>
+                    <li>Version number format standardization<br>
+                        <ul>
+                            <li>Updated version number format to use spaces instead of hyphens</li>
+                            <li>Applied to all pages consistently</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="section">
+                <p><strong>Date:</strong> 2025.12.21<br>
+                <strong>Version:</strong> 2025.12.21<br>
+                <strong>Version Number:</strong> β.25.1227.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update creates CHANGELOG reading pages and fixes homepage links</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Created CHANGELOG reading pages<br>
+                        <ul>
+                            <li>public/changelog.html (Chinese version)</li>
+                            <li>public/en/changelog.html (English version)</li>
+                            <li>Added animation effects to pages</li>
+                            <li>Display complete CHANGELOG content</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Updated update log button links on homepages<br>
+                        <ul>
+                            <li>public/index.html: Changed link from CHANGELOG file to changelog.html page</li>
+                            <li>public/en/index.html: Changed link from Bitbucket commits page to changelog.html page</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="section">
+                <p><strong>Date:</strong> 2025.12.21<br>
+                <strong>Version:</strong> 2025.12.21<br>
+                <strong>Version Number:</strong> β.25.1221.2</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update fixes garbled characters and link errors in English news pages</li>
+                </ul>
+                
+                <h3>Fixes:</h3>
+                <ul>
+                    <li>Fixed garbled characters in English news pages<br>
+                        <ul>
+                            <li>Removed Chinese garbled characters (such as: 銆, 鈽, 路, 鈥, etc.) from all pages</li>
+                            <li>Fixed titles and content in the following pages:<br>
+                                <ul>
+                                    <li>public/en/news/list-tlz.html</li>
+                                    <li>public/en/news/list-360reality.html</li>
+                                    <li>public/en/news/list-ssdjy.html</li>
+                                    <li>public/en/news/list.html</li>
+                                    <li>public/en/news/wuhanguanggukonggui.html</li>
+                                    <li>public/en/news/rctrs1pov.html</li>
+                                    <li>public/en/news/360realityp1.html to 360realityp7.html</li>
+                                    <li>public/en/news/ssdjyp4.html</li>
+                                </ul>
+                            </li>
+                            <li>Replaced garbled separators with standard hyphens (-)</li>
+                        </ul>
+                    </li>
+                    <li>Fixed page link errors<br>
+                        <ul>
+                            <li>Fixed relative paths for LICENSE files</li>
+                            <li>Ensured all links point to the correct target files</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Updated website version information<br>
+                        <ul>
+                            <li>Updated version number from β.25.1221.1 to β.25.1221.2 in all pages</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+  - Affected pages: All website pages
+
+            <div class="section">
+                <p><strong>Date:</strong> 2025.12.21<br>
+                <strong>Version:</strong> 2025.12.21<br>
+                <strong>Version Number:</strong> β.25.1221.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update fixes HTML structure errors and updates version identifiers</li>
+                </ul>
+                
+                <h3>Fixes:</h3>
+                <ul>
+                    <li>Fixed HTML structure errors in all news pages<br>
+                        <ul>
+                            <li>Moved footer tags from outside &lt;body&gt; to inside &lt;body&gt; in all pages</li>
+                            <li>Ensured HTML structure complies with standard specifications</li>
+                            <li>Affected pages: All news pages and list pages</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Updated website version information<br>
+                        <ul>
+                            <li>Updated version number from α.25.1220.1 to β.25.1221.1 in all pages</li>
+                            <li>Affected pages: All website pages</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="section">
+                <p><strong>Date:</strong> 2026.12.20<br>
+                <strong>Version:</strong> 2026.12.20<br>
+                <strong>Version Number:</strong> α.25.1220.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update is a major version release</li>
+                </ul>
+                
+                <h3>Fixes:</h3>
+                <ul>
+                    <li>Fixed brand link navigation issue in Chinese list pages' title bar<br>
+                        <ul>
+                            <li>Updated brand links in the following pages:<br>
+                                <ul>
+                                    <li>public/news/list.html</li>
+                                    <li>public/news/list-tlz.html</li>
+                                    <li>public/news/list-360reality.html</li>
+                                    <li>public/news/list-ssdjy.html</li>
+                                </ul>
+                            </li>
+                            <li>Corrected incorrect relative path href="index.html" to href="../index.html"</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Added animation effects to list pages<br>
+                        <ul>
+                            <li>Added combined fadeIn and blur animations</li>
+                            <li>Added sequential animations to navbar items</li>
+                            <li>Added staggered loading animations to list items</li>
+                            <li>Added animations to back buttons</li>
+                            <li>Affected pages: All list pages (list*.html)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>UI Updates:</h3>
+                <ul>
+                    <li>Added language switch buttons to list pages<br>
+                        <ul>
+                            <li>Added language switch functionality to:<br>
+                                <ul>
+                                    <li>public/news/list.html</li>
+                                    <li>public/news/list-tlz.html</li>
+                                    <li>public/news/list-360reality.html</li>
+                                    <li>public/news/list-ssdjy.html</li>
+                                    <li>public/en/news/list.html</li>
+                                    <li>public/en/news/list-tlz.html</li>
+                                    <li>public/en/news/list-360reality.html</li>
+                                    <li>public/en/news/list-ssdjy.html</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Updated website version information<br>
+                        <ul>
+                            <li>Updated version number and release date in Chinese about page (about.html)</li>
+                            <li>Updated version number and release date in English about page (en/about.html)</li>
+                            <li>Updated version number in footer of Chinese homepage (index.html)</li>
+                            <li>Updated version number in footer of English homepage (en/index.html)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Technical Details:</h3>
+                <ul>
+                    <li>Version number follows α.25.1220.1 format:<br>
+                        <ul>
+                            <li>α: Alpha release version</li>
+                            <li>25: Year (2025)</li>
+                            <li>1220: Date (December 20th)</li>
+                            <li>1: Version number of the day</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div class="section">
+                <p><strong>Date:</strong> 2026.05.22<br>
+                <strong>Version:</strong> 2026.05.22<br>
+                <strong>Version Number:</strong> r.250522.1</p>
+                
+                <h3>Updates:</h3>
+                <ul>
+                    <li>Changed website hosting provider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5 back-button">
+        <a class="btn btn-primary" href="/en/index.html">Back to Home</a>
+    </div>
+</div>
+
+<footer class="mt-5 py-3 bg-light text-center">
+    <div class="version-container"></div>
+     <div style="display: flex; justify-content: center; gap: 20px; margin: 8px 0;">
+        <img src="../files/images/DAEen.png" alt="DAE" style="height: 24px;">
+        <img src="../files/images/MLSen.png" alt="MLS" style="height: 24px;">
+    </div>
+     <a href="licenseview.html">Apache2.0 License
+        ——Copyright RejTech 2026</a>
+</footer>
+<script src="../js/version-loader.js"></script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b3ea2d47503648c48171ebfd73f02f36","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+日期2026.04.04
+Version 2026.04.04
+版本号-γ.26.0404.1
+Version Number-γ.26.0404.1
+
+### 版本说明 / Version Note:
+- 本次更新优化了动画顺序，同步了社区页面内容，修复了视频页面错误，并添加了视频封面加载动画
+  This update optimizes animation sequence, synchronizes community page content, fixes video page errors, and adds video cover loading animation
+
+### 新功能 / New Features:
+- 为视频封面添加动态占位符和加载动画
+  Added dynamic placeholder and loading animation for video covers
+  - 视频封面加载时显示3秒动态占位符
+    Display 3-second dynamic placeholder when video covers are loading
+  - 图片加载在占位符下方，加载完成后平滑过渡显示
+    Images load below placeholder and display with smooth transition after loading
+  - 全程流畅的淡入淡出动画效果
+    Smooth fade-in and fade-out animation throughout
+
+### 优化内容 / Optimizations:
+- 优化动画顺序
+  Optimized animation sequence
+  - 为导航栏项目设置递增的动画延迟（0.1s - 0.7s）
+    Set incremental animation delays for navbar items (0.1s - 0.7s)
+  - 为内容部分设置合理的动画延迟（0.8s, 1.0s）
+    Set reasonable animation delays for content sections (0.8s, 1.0s)
+  - 为卡片设置递增的动画延迟（1.2s - 1.5s）
+    Set incremental animation delays for cards (1.2s - 1.5s)
+  - 为图标设置合理的动画延迟（1.6s - 1.7s）
+    Set reasonable animation delays for icons (1.6s - 1.7s)
+
+### 同步内容 / Synchronization:
+- 同步社区页面内容
+  Synchronized community page content
+  - 将中文版本的4个卡片（Bilibili、Douyin、幻境星空-巡光、CZMukafu末卡符ava）同步到英文版本
+    Synchronized 4 cards (Bilibili, Douyin, 幻境星空-巡光, CZMukafu末卡符ava) from Chinese version to English version
+  - 英文版本的按钮文本保持为"Go Now"，与原有风格一致
+    Kept button text as "Go Now" in English version to match existing style
+  - 添加了"Union members"标题
+    Added "Union members" title
+
+### 修复内容 / Fixes:
+- 修复视频页面的OpaqueResponseBlocking错误
+  Fixed OpaqueResponseBlocking error on video pages
+  - 在videos.html中添加了referrer策略
+    Added referrer policy to videos.html
+  - 在videoApi.js的fetch请求中添加了mode: 'cors'选项
+    Added mode: 'cors' option to fetch requests in videoApi.js
+
+- 简化视频页面功能
+  Simplified video page functionality
+  - 删除了排序切换功能，避免排序无变化的问题
+    Removed sorting toggle functionality to avoid sorting not changing issue
+  - 保持搜索和分页功能正常工作
+    Kept search and pagination functionality working normally
+
+### 更新内容 / Updates:
+- 更新版本号信息
+  Updated version number information
+  - 将版本号从γ.26.0403.1更新为γ.26.0404.1
+    Updated version number from γ.26.0403.1 to γ.26.0404.1
+  - 更新了中文关于页面 (about.html) 中的版本号
+    Updated version number in Chinese about page (about.html)
+  - 更新了英文关于页面 (en/about.html) 中的版本号和发布日期
+    Updated version number and release date in English about page (en/about.html)
+  - 更新了版本号模板文件 (components/version.html)
+    Updated version number template file (components/version.html)
+
+日期2025.12.27
+Version 2025.12.27
+版本号-β.25.1227.1
+Version Number-β.25.1227.1
+
+### 版本说明 / Version Note:
+- 本次更新添加了LICENSE页面，标准化footer样式，增强页面视觉效果和用户体验
+  This update adds LICENSE page, standardizes footer styling, enhances visual effects and user experience
+
+### 新功能 / New Features:
+- 添加LICENSEView页面
+  Added LICENSEView page
+  - public/licenseview.html (中文版本)
+  - public/en/licenseview.html (英文版本)
+  - 包含详细的许可证权限表格说明
+    Include detailed license permission table explanation
+  - 保持与其他页面一致的风格和动画效果
+    Maintain consistent style and animation effects with other pages
+
+### 更新内容 / Updates:
+- 标准化footer样式
+  Standardized footer styling
+  - 为除视频详情页外的所有页面应用统一的footer样式
+    Applied unified footer styling to all pages except video detail pages
+  - 使用统一的Bootstrap类：mt-5 py-3 bg-light text-center
+    Used unified Bootstrap classes: mt-5 py-3 bg-light text-center
+
+- 版权年份更新
+  Copyright year update
+  - 将所有页面的版权年份从2025更新为2026
+    Updated copyright year from 2025 to 2026 on all pages
+
+- 图标增强
+  Icon enhancement
+  - 在主要页面的footer中添加DAE图标，匹配语言版本
+    Added DAE icons to footer of main pages with language matching
+    - 中文页面：DAEcn.png
+    - 英文页面：DAEen.png
+  - 添加MLS图标，与DAE图标处于同一行
+    Added MLS icons in the same row as DAE icons
+    - 中文页面：MLScn.png
+    - 英文页面：MLSen.png
+  - 使用Flexbox布局确保图标对齐
+    Used Flexbox layout to ensure icon alignment
+
+### 视觉增强 / Visual Enhancements:
+- 图标进入动画
+  Icon entrance animation
+  - 为DAE和MLS图标添加fadeInUp动画效果
+    Added fadeInUp animation effect for DAE and MLS icons
+  - DAE图标延迟1.2秒，MLS图标延迟1.4秒
+    DAE icon delay: 1.2s, MLS icon delay: 1.4s
+  - 动画持续时间0.6秒，创造流畅的视觉体验
+    Animation duration: 0.6s for smooth visual experience
+
+日期2025.12.21
+Version 2025.12.21
+版本号-β.25.1221.3
+Version Number-β.25.1221.3
+
+### 版本说明 / Version Note:
+- 本次更新创建了CHANGELOG阅读页面并修复了主页链接
+  This update creates CHANGELOG reading pages and fixes homepage links
+
+### 新功能 / New Features:
+- 创建了CHANGELOG阅读页面
+  Created CHANGELOG reading pages
+  - public/changelog.html (中文版本)
+  - public/en/changelog.html (英文版本)
+  - 为页面添加了动画效果
+    Added animation effects to pages
+  - 包含完整的CHANGELOG内容显示
+    Display complete CHANGELOG content
+
+### 更新内容 / Updates:
+- 更新了主页上的更新日志按钮链接
+  Updated update log button links on homepages
+  - public/index.html: 将链接从 CHANGELOG 文件改为 changelog.html 页面
+    Changed link from CHANGELOG file to changelog.html page
+  - public/en/index.html: 将链接从 Bitbucket 提交页面改为 changelog.html 页面
+    Changed link from Bitbucket commits page to changelog.html page
+
+日期2025.12.21
+Version 2025.12.21
+版本号-β.25.1221.2
+Version Number-β.25.1221.2
+
+### 版本说明 / Version Note:
+- 本次更新修复了英文新闻页面中的乱码问题和链接错误
+  This update fixes garbled characters and link errors in English news pages
+
+### 修复内容 / Fixes:
+- 修复英文新闻页面中的乱码字符
+  Fixed garbled characters in English news pages
+  - 移除了所有页面中的中文乱码字符（如：銆、鈽、路、鈥等）
+    Removed Chinese garbled characters (such as: 銆, 鈽, 路, 鈥, etc.) from all pages
+  - 修复了以下页面的标题和内容：
+    Fixed titles and content in the following pages:
+    - public/en/news/list-tlz.html
+    - public/en/news/list-360reality.html
+    - public/en/news/list-ssdjy.html
+    - public/en/news/list.html
+    - public/en/news/wuhanguanggukonggui.html
+    - public/en/news/rctrs1pov.html
+    - public/en/news/360realityp1.html to 360realityp7.html
+    - public/en/news/ssdjyp4.html
+  - 将乱码分隔符替换为标准的连字符 (-)
+    Replaced garbled separators with standard hyphens (-)
+
+- 修复页面链接错误
+  Fixed page link errors
+  - 修复了LICENSE文件的相对路径
+    Fixed relative paths for LICENSE files
+  - 确保所有链接指向正确的目标文件
+    Ensured all links point to the correct target files
+
+### 更新内容 / Updates:
+- 更新网站版本号信息
+  Updated website version information
+  - 将所有页面的版本号从β.25.1221.1更新为β.25.1221.2
+    Updated version number from β.25.1221.1 to β.25.1221.2 in all pages
+  - 影响页面：所有网站页面
+    Affected pages: All website pages
+
+日期2025.1221.1
+Version 2025.12.21
+版本号-β.25.1221.1
+Version Number-β.25.1221.1
+
+### 版本说明 / Version Note:
+- 本次更新修复了HTML结构错误并更新了版本标识
+  This update fixes HTML structure errors and updates version identifiers
+
+### 修复内容 / Fixes:
+- 修复所有新闻页面的HTML结构错误
+  Fixed HTML structure errors in all news pages
+  - 将所有页面的footer标签从body外部移动到body内部
+    Moved footer tags from outside <body> to inside <body> in all pages
+  - 确保HTML结构符合标准规范
+    Ensured HTML structure complies with standard specifications
+  - 影响页面：所有新闻页面和列表页面
+    Affected pages: All news pages and list pages
+
+### 更新内容 / Updates:
+- 更新网站版本号信息
+  Updated website version information
+  - 将所有页面的版本号从α.25.1220.1更新为β.25.1221.1
+    Updated version number from α.25.1220.1 to β.25.1221.1 in all pages
+  - 影响页面：所有网站页面
+    Affected pages: All website pages
+
+日期2025.12.20
+Version 2025.12.20
+版本号-α.25.1220.1
+Version Number-α.25.1220.1
+
+### 版本说明 / Version Note:
+- 本次更新为大版本更新
+  This update is a major version release
+
+### 修复内容 / Fixes:
+- 修复中文列表页面标题栏品牌链接跳转问题
+  Fixed brand link navigation issue in Chinese list pages' title bar
+  - 更新了以下页面的品牌链接：
+    Updated brand links in the following pages:
+    - public/news/list.html
+    - public/news/list-tlz.html
+    - public/news/list-360reality.html
+    - public/news/list-ssdjy.html
+  - 将错误的相对路径 href="index.html" 修正为 href="../index.html"
+    Corrected incorrect relative path href="index.html" to href="../index.html"
+
+### 新功能 / New Features:
+- 为列表页面添加动画效果
+  Added animation effects to list pages
+  - 添加了 fadeIn 和模糊效果的组合动画
+    Added combined fadeIn and blur animations
+  - 为导航栏项目添加了序列动画
+    Added sequential animations to navbar items
+  - 为列表项添加了延迟加载动画
+    Added staggered loading animations to list items
+  - 为返回按钮添加了动画效果
+    Added animations to back buttons
+  - 影响页面：所有列表页面 (list*.html)
+    Affected pages: All list pages (list*.html)
+
+### 界面更新 / UI Updates:
+- 为列表页面添加语言切换按钮
+  Added language switch buttons to list pages
+  - 在以下页面添加了语言切换功能：
+    Added language switch functionality to:
+    - public/news/list.html
+    - public/news/list-tlz.html
+    - public/news/list-360reality.html
+    - public/news/list-ssdjy.html
+    - public/en/news/list.html
+    - public/en/news/list-tlz.html
+    - public/en/news/list-360reality.html
+    - public/en/news/list-ssdjy.html
+
+### 更新内容 / Updates:
+- 更新网站版本号信息
+  Updated website version information
+  - 更新了中文关于页面 (about.html) 中的版本号和发布日期
+    Updated version number and release date in Chinese about page (about.html)
+  - 更新了英文关于页面 (en/about.html) 中的版本号和发布日期
+    Updated version number and release date in English about page (en/about.html)
+  - 更新了中文首页 (index.html) 底部的版本号
+    Updated version number in footer of Chinese homepage (index.html)
+  - 更新了英文首页 (en/index.html) 底部的版本号
+    Updated version number in footer of English homepage (en/index.html)
+
+### 技术细节 / Technical Details:
+- 版本号遵循 α.25.1220.1 格式：
+  Version number follows γ1.25.1220.1 format:
+  - α: 测试版本 / Alpha release version
+  - 25: 年份 (2025) / Year (2025)
+  - 1220: 日期 (12月20日) / Date (December 20th)
+  - 1: 当天的版数 / Version number of the day
+
+日期2025.05.22
+Version 2025.05.22
+版本号-r.250522.1
+Version Number-r.250522.1
+
+### 更新内容 / Updates:
+- 网站托管服务商更改
+  Changed website hosting provider
