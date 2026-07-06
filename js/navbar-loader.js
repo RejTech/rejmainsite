@@ -11,7 +11,10 @@ class NavbarLoader {
                 aboutText: '关于RMS锐机主站',
                 fileStationText: '锐机文件站',
                 classSiteText: '锐机班级站',
-                languageText: 'Switch to English'
+                languageText: 'Switch to English',
+                themeComponentText: '主题组件',
+                autoModeText: '自动切换',
+                themeToggleText: '深色'
             },
             'en': {
                 siteName: 'Rej Comprehensive Site',
@@ -22,7 +25,10 @@ class NavbarLoader {
                 aboutText: 'About RMS',
                 fileStationText: 'Rej File Station',
                 classSiteText: 'Rej Class Site',
-                languageText: '切换至中文'
+                languageText: '切换至中文',
+                themeComponentText: 'Theme',
+                autoModeText: 'Auto Switch',
+                themeToggleText: 'Dark'
             }
         };
     }
@@ -148,6 +154,11 @@ class NavbarLoader {
                 console.log('NavbarLoader: Bootstrap navbar initialized');
             } else {
                 console.log('NavbarLoader: Bootstrap not available');
+            }
+
+            if (window.themeSwitcher) {
+                window.themeSwitcher.updateToggleText();
+                console.log('NavbarLoader: Theme toggle icons updated');
             }
         } catch (error) {
             console.error('Error loading navbar:', error);
