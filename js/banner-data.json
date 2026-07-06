@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "zh_title": "欢迎访问锐机综合站",
+        "en_title": "Welcome to Rej Comprehensive Site",
+        "zh_content": "一站式综合服务平台，为您提供最新资讯、视频和直播内容",
+        "en_content": "One-stop comprehensive service platform with the latest news, videos, and live streaming",
+        "zh_button": "立即探索",
+        "en_button": "Explore Now",
+        "button_link": "index.html"
+    },
+    {
+        "id": 2,
+        "zh_title": "全新功能上线",
+        "en_title": "New Features Released",
+        "zh_content": "体验全新改版的界面设计和丰富的功能模块",
+        "en_content": "Experience the newly redesigned interface and rich feature modules",
+        "zh_button": "了解更多",
+        "en_button": "Learn More",
+        "button_link": "changelogview.html"
+    },
+    {
+        "id": 3,
+        "zh_title": "探索文件站",
+        "en_title": "Explore File Station",
+        "zh_content": "获得锐机文件站的最新资源和工具",
+        "en_content": "Get the latest resources and tools from Rej File Station",
+        "zh_button": "立即访问",
+        "en_button": "Explore Now",
+        "button_link": "https://rejfilessite.netlify.app"
+    },
+    {
+        "id": 4,
+        "zh_title": "锐机联合哔哩哔哩账号",
+        "en_title": "RejUnion Bilibili Account",
+        "zh_content": "锐机联合哔哩哔哩账号，为您提供最新资讯、视频和直播内容",
+        "en_content": "Get the latest news, videos, and live streaming from RejUnion Bilibili Account",
+        "zh_button": "开始浏览",
+        "en_button": "Start Browse",
+        "button_link": "https://space.bilibili.com/1162853749"
+    }
+]

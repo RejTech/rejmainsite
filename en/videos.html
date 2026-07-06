@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta name="referrer" content="no-referrer" />
-    <title>Video List - Rej Comprehensive Site</title>
+    <title>Submissions - Rej Comprehensive Site</title>
     <link rel="icon" href="../files/images/rms-logo-rotating.svg">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/glass-navbar.css" rel="stylesheet">
@@ -18,7 +17,6 @@
         .navbar-toggler {
             border-radius: 20px;
         }
-        /* 确保导航栏不会覆盖模态框 */
         .navbar {
             z-index: 1030;
         }
@@ -38,114 +36,43 @@
             opacity: 0;
             animation: fadeInUp 0.5s ease forwards;
         }
-        .nav-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        .nav-item:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .nav-item:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        .nav-item:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-        .nav-item:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-        .nav-item:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-        .nav-item:nth-child(7) {
-            animation-delay: 0.7s;
-        }
-        /* 页面内容区块动画 */
+        .nav-item:nth-child(1) { animation-delay: 0.1s; }
+        .nav-item:nth-child(2) { animation-delay: 0.2s; }
+        .nav-item:nth-child(3) { animation-delay: 0.3s; }
+        .nav-item:nth-child(4) { animation-delay: 0.4s; }
+        .nav-item:nth-child(5) { animation-delay: 0.5s; }
+        .nav-item:nth-child(6) { animation-delay: 0.6s; }
+        .nav-item:nth-child(7) { animation-delay: 0.7s; }
         body > div.content-section {
             opacity: 0;
             animation: fadeInUp 0.6s ease forwards;
         }
-        body > div.content-section:nth-child(2) {
-            animation-delay: 0.8s;
+        body > div.content-section:nth-child(2) { animation-delay: 0.8s; }
+        .bilibili-iframe {
+            width: 100%;
+            min-height: 1000px;
+            border: none;
+            margin-top: -100px;
         }
-        body > div.content-section:nth-child(3) {
-            animation-delay: 1.0s;
-        }
-        body > div.content-section:nth-child(4) {
-            animation-delay: 1.2s;
-        }
-        .video-card {
-            opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
-            transition: transform 0.3s ease;
-        }
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-        .card {
-            border-radius: 20px;
-            overflow: hidden;
-        }
-        .video-thumbnail {
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            border-radius: 20px 20px 0 0;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .video-thumbnail.loaded {
-            opacity: 1;
-        }
-        .thumbnail-container {
+        .iframe-container {
             position: relative;
-            aspect-ratio: 16/9;
-            border-radius: 20px 20px 0 0;
+            width: 100%;
             overflow: hidden;
+            border-radius: 20px;
+            height: 900px;
         }
-        .placeholder {
+        .iframe-loading {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: placeholderAnimation 1.5s ease-in-out infinite;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-        @keyframes placeholderAnimation {
-            0% {
-                background-position: 200% 0;
-            }
-            100% {
-                background-position: -200% 0;
-            }
-        }
-        .video-info {
-            padding: 12px;
-        }
-        .video-title {
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        .video-stats {
-            font-size: 14px;
-            color: #666;
-            display: flex;
-            gap: 16px;
-        }
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .loading-spinner {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 300px;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 10;
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -154,7 +81,7 @@
 <script src="../js/navbar-loader.js"></script>
 
 <div class="container mt-5 content-section">
-    <h1 class="mb-4">Video List</h1>
+    <h1 class="mb-4">Submissions</h1>
     
     <div class="row mb-4">
         <div class="col-md-6">
@@ -163,32 +90,21 @@
                 <button class="btn btn-primary" id="search-btn">Search</button>
             </div>
         </div>
-    </div>
-
-    <div id="loading" class="loading-spinner">
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="col-md-6">
+            <div class="d-flex gap-2 justify-content-end">
+                <a href="https://space.bilibili.com/1162853749" target="_blank" class="btn btn-outline-primary">Open on Bilibili</a>
+            </div>
         </div>
     </div>
 
-    <div id="video-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-none"></div>
-
-    <div id="pagination" class="mt-5 d-flex justify-content-center d-none">
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li class="page-item" id="prev-page">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item" id="next-page">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="iframe-container">
+        <div class="iframe-loading" id="iframe-loading">
+            <div class="text-center">
+                <div class="spinner-border mb-3" role="status"></div>
+                <p>Loading Bilibili video list...</p>
+            </div>
+        </div>
+        <iframe id="bilibili-iframe" class="bilibili-iframe" src="https://space.bilibili.com/1162853749/video" onload="document.getElementById('iframe-loading').style.display='none'"></iframe>
     </div>
 </div>
 
@@ -203,171 +119,23 @@
 </footer>
 <script src="../js/version-loader.js"></script>
 
-<script type="module">
-    import videoApi from '../apis/videoApi.js';
-    
-    const USER_ID = '1162853749';
-    let currentPage = 1;
-    let totalPages = 1;
-    let currentSearch = '';
-
-    async function fetchVideos() {
-        document.getElementById('loading').classList.remove('d-none');
-        document.getElementById('video-container').classList.add('d-none');
-        document.getElementById('pagination').classList.add('d-none');
-
-        try {
-            console.log('Starting to fetch videos...');
-            console.log('User ID:', USER_ID);
-            
-            const data = await videoApi.getUserVideos(USER_ID, currentPage, 9, currentSearch);
-            console.log('API response:', data);
-
-            if (data) {
-                displayVideos(data);
-                updatePagination(data.total, data.pageSize);
-            } else {
-                console.error('API returned empty data');
-                document.getElementById('video-container').innerHTML = '<div class="col-12"><div class="alert alert-danger" role="alert">Failed to fetch videos, please try again later</div></div>';
-                document.getElementById('video-container').classList.remove('d-none');
-            }
-        } catch (error) {
-            console.error('Error fetching videos:', error);
-            console.error('Error message:', error.message);
-            console.error('Error stack:', error.stack);
-            document.getElementById('video-container').innerHTML = '<div class="col-12"><div class="alert alert-danger" role="alert">Video API is temporarily unavailable, please try again later</div></div>';
-            document.getElementById('video-container').classList.remove('d-none');
-        } finally {
-            document.getElementById('loading').classList.add('d-none');
-        }
-    }
-
-    function displayVideos(data) {
-        const container = document.getElementById('video-container');
-        container.innerHTML = '';
-
-        if (data.videos.length === 0) {
-            container.innerHTML = '<div class="col-12"><div class="alert alert-info" role="alert">No videos found</div></div>';
-            container.classList.remove('d-none');
-            return;
-        }
-
-        data.videos.forEach((video, index) => {
-            const videoCard = document.createElement('div');
-            videoCard.className = 'col video-card';
-            videoCard.style.animationDelay = `${0.1 + index * 0.1}s`;
-            videoCard.innerHTML = `
-                <div class="card h-100">
-                    <a href="videoplayer.html?bvid=${video.bvid}">
-                        <div class="thumbnail-container">
-                            <div class="placeholder"></div>
-                            <img src="${video.cover}" class="card-img-top video-thumbnail" alt="${video.title}" onerror="this.src='files/images/zhanweifu.webp'; this.onerror=null; this.classList.add('loaded'); this.previousElementSibling.style.opacity = '0';">
-                        </div>
-                    </a>
-                    <div class="video-info">
-                        <a href="videoplayer.html?bvid=${video.bvid}" class="text-decoration-none text-dark">
-                            <h5 class="video-title">${video.title}</h5>
-                        </a>
-                        <div class="video-stats">
-                            <div class="stat-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.693-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                                </svg>
-                                ${formatNumber(video.playCount)}
-                            </div>
-                            <div class="stat-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                    <path d="M8 3a.5.5 0 0 1 .5.5V9a.5.5 0 0 1-.5.5H6a.5.5 0 0 1 0-1h1.5V3.5A.5.5 0 0 1 8 3z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-                                </svg>
-                                ${formatDuration(video.duration)}
-                            </div>
-                            <div class="stat-item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                                </svg>
-                                ${formatDate(video.publishTime)}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // 3秒后显示图片，隐藏占位符
-            setTimeout(() => {
-                const img = videoCard.querySelector('.video-thumbnail');
-                const placeholder = videoCard.querySelector('.placeholder');
-                if (img && placeholder) {
-                    img.classList.add('loaded');
-                    placeholder.style.opacity = '0';
-                    // 动画结束后移除占位符
-                    setTimeout(() => {
-                        placeholder.style.display = 'none';
-                    }, 500);
-                }
-            }, 3000);
-            container.appendChild(videoCard);
-        });
-
-        container.classList.remove('d-none');
-    }
-
-    function updatePagination(total, size) {
-        totalPages = Math.ceil(total / size);
-        const pagination = document.getElementById('pagination');
-        const pageInfo = pagination.querySelector('.page-item.active a');
-        pageInfo.textContent = currentPage;
-
-        document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
-        document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
-
-        pagination.classList.remove('d-none');
-    }
-
-    function formatNumber(num) {
-        if (num >= 10000) {
-            return (num / 10000).toFixed(1) + 'K';
-        }
-        return num.toString();
-    }
-
-    function formatDuration(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${minutes}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    function formatDate(timestamp) {
-        const date = new Date(timestamp * 1000);
-        return date.toLocaleDateString('en-US');
-    }
-
+<script>
     document.getElementById('search-btn').addEventListener('click', () => {
-        currentSearch = document.getElementById('search-input').value;
-        currentPage = 1;
-        fetchVideos();
+        const search = document.getElementById('search-input').value.trim();
+        const iframe = document.getElementById('bilibili-iframe');
+        if (search) {
+            iframe.src = `https://search.bilibili.com/all?keyword=${encodeURIComponent(search)}&page=1`;
+        } else {
+            iframe.src = 'https://space.bilibili.com/1162853749/video';
+        }
+        document.getElementById('iframe-loading').style.display = 'flex';
     });
 
-
-
-    document.getElementById('prev-page').addEventListener('click', (e) => {
-        e.preventDefault();
-        if (currentPage > 1) {
-            currentPage--;
-            fetchVideos();
+    document.getElementById('search-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            document.getElementById('search-btn').click();
         }
     });
-
-    document.getElementById('next-page').addEventListener('click', (e) => {
-        e.preventDefault();
-        if (currentPage < totalPages) {
-            currentPage++;
-            fetchVideos();
-        }
-    });
-
-    // Initialize video fetching
-    fetchVideos();
 </script>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b3ea2d47503648c48171ebfd73f02f36","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>

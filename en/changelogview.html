@@ -98,6 +98,76 @@
     <div class="changelog-container">
         <div class="changelog-content">
             <div class="section">
+                <p><strong>Date:</strong> 2026.07.06<br>
+                <strong>Version:</strong> 2026.07.06<br>
+                <strong>Version Number:</strong> γ.26.0706.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update adds theme system and banner system, implementing automatic dark/light mode switching based on time and top banner functionality</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Theme System
+                        <ul>
+                            <li>Automatic dark/light mode switching based on time (light 6:00-18:00, dark 18:00-6:00)</li>
+                            <li>Manual mode switching (light/dark)</li>
+                            <li>Auto mode toggle (auto switch/manual switch)</li>
+                            <li>Detect time and switch mode on page load</li>
+                            <li>Navbar theme component wrapper design</li>
+                            <li>Support for Chinese and English pages</li>
+                        </ul>
+                    </li>
+                    <li>Banner System
+                        <ul>
+                            <li>Top banner (expanded on page load, collapsed after 5 seconds)</li>
+                            <li>Real-time countdown display at top-right corner</li>
+                            <li>Does not occupy space after collapsing</li>
+                            <li>Smooth transition animation effect</li>
+                            <li>Banner component independent as a component</li>
+                            <li>JSON banner data library supports multiple banner contents</li>
+                            <li>Support for Chinese/English titles, content, button text and button links</li>
+                            <li>Random banner selection on each refresh</li>
+                        </ul>
+                    </li>
+                    <li>Hero Text Carousel
+                        <ul>
+                            <li>Hero description text auto-switches every 1 second</li>
+                            <li>Fade in/out transition animation effect</li>
+                            <li>Contains 5 descriptive texts</li>
+                            <li>Support for Chinese and English pages</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Created Files:</h3>
+                <ul>
+                    <li>css/dark-mode.css - Dark mode stylesheet</li>
+                    <li>css/banner.css - Banner stylesheet</li>
+                    <li>js/theme-switcher.js - Theme switching logic</li>
+                    <li>js/banner-loader.js - Banner loading logic</li>
+                    <li>js/banner-data.json - Banner data JSON library</li>
+                    <li>components/banner.html - Banner component template</li>
+                </ul>
+                
+                <h3>Modified Files:</h3>
+                <ul>
+                    <li>components/navbar.html - Added theme toggle buttons</li>
+                    <li>js/navbar-loader.js - Added theme button text configuration and icon updates</li>
+                    <li>index.html - Added theme and banner system references, removed inline code</li>
+                    <li>en/index.html - Added theme and banner system references, removed inline code</li>
+                </ul>
+                
+                <h3>Fixes:</h3>
+                <ul>
+                    <li>Fixed theme switching not working on English pages</li>
+                    <li>Fixed auto mode not detecting time on page load</li>
+                    <li>Fixed banner component DOM element insertion failure (changed firstChild to firstElementChild)</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="section">
                 <p><strong>Date:</strong> 2026.04.04<br>
                 <strong>Version:</strong> 2026.04.04<br>
                 <strong>Version Number:</strong> γ.26.0404.1</p>

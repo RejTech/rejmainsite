@@ -27,7 +27,10 @@ class ThemeSwitcher {
             this.autoModeEnabled = autoMode === 'true';
         }
 
-        if (manualMode !== null) {
+        if (this.autoModeEnabled) {
+            this.darkModeEnabled = this.shouldBeDark();
+            localStorage.removeItem(this.MANUAL_MODE_KEY);
+        } else if (manualMode !== null) {
             this.darkModeEnabled = manualMode === 'true';
         } else if (savedTheme !== null) {
             this.darkModeEnabled = savedTheme === 'dark';

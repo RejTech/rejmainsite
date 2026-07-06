@@ -104,15 +104,12 @@
 <body>
 <div id="navbar-container" class="sticky-top"></div>
 <script src="../js/navbar-loader.js"></script>
-<div class="bg-light p-4 content-section">
-    <h5 class="text-body-emphasis h4">Using RTOS(Based on TurboWarp)</h5>
-    <a class="btn btn-primary" target="_blank" href="https://xw44n-my.sharepoint.com/:u:/g/personal/rej_xw44n_onmicrosoft_com/IQDLpCHmgwf8Q7uAt0PolXieAYph7YGvNiT_9QFJ5ODrUR0?e=8tg2kP">Download Offline Package</a>
-</div>
+<script src="../js/banner-loader.js"></script>
 <div class="p-5 mb-4 bg-body-tertiary rounded-3 content-section">
     <div class="container-fluid py-5">
         <img alt="" height="150" src="../files/images/rms-logo.svg" width="150" style="opacity: 0; animation: spinIn 1s ease-out forwards 1.2s, slowSpin 10s linear infinite 2.2s;"/>
         <h1 class="display-5 fw-bold">Welcome to Rej Comprehensive Site</h1>
-        <p class="col-md-8 fs-4">Here we provide comprehensive Rej information</p>
+        <p class="col-md-8 fs-4"><span id="hero-carousel">Here we provide comprehensive Rej information</span></p>
         <a class="btn btn-primary" href="changelogview.html">Update Log(CHANGELOG)</a>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#feedbackModal">
             Provide Feedback
@@ -175,6 +172,33 @@
         ——Copyright RejTech 2026</a>
 </footer>
 <script src="../js/version-loader.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const texts = [
+            'Here we provide comprehensive Rej information',
+            'Explore unlimited possibilities, discover more wonders',
+            'One-stop comprehensive service platform',
+            'Latest news, videos, and live streaming all in one place',
+            'Grow with Rej, create the future together'
+        ];
+        
+        const carouselElement = document.getElementById('hero-carousel');
+        let currentIndex = 0;
+        
+        function changeText() {
+            carouselElement.style.opacity = '0';
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % texts.length;
+                carouselElement.textContent = texts[currentIndex];
+                carouselElement.style.opacity = '1';
+            }, 300);
+        }
+        
+        carouselElement.style.transition = 'opacity 0.3s ease';
+        
+        setInterval(changeText, 1000);
+    });
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"b3ea2d47503648c48171ebfd73f02f36","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

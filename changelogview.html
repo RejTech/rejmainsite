@@ -98,6 +98,113 @@
     <h1 class="display-4 text-center mb-5">更新日志 (CHANGELOG)</h1>
     <div class="changelog-container">
         <div class="changelog-content">
+        <p><strong>日期：</strong>2026.07.06<br>
+        <strong>Version：</strong>2026.07.06<br>
+        <strong>版本号：</strong>γ.26.0706.1<br>
+        <strong>Version Number：</strong>γ.26.0706.1</p>
+        <div class="section">
+            <h3>版本说明 / Version Note:</h3>
+            <ul>
+                <li>本次更新添加了主题系统和广告系统，实现了根据时间自动切换深浅色模式和顶部广告条功能<br>
+                This update adds theme system and banner system, implementing automatic dark/light mode switching based on time and top banner functionality</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>新功能 / New Features:</h3>
+            <ul>
+                <li>主题系统 / Theme System
+                    <ul>
+                        <li>根据时间自动切换深浅色模式（6:00-18:00浅色，18:00-6:00深色）<br>
+                        Automatic dark/light mode switching based on time (light 6:00-18:00, dark 18:00-6:00)</li>
+                        <li>手动切换模式（浅色/深色）<br>
+                        Manual mode switching (light/dark)</li>
+                        <li>自动模式开关（自动切换/手动切换）<br>
+                        Auto mode toggle (auto switch/manual switch)</li>
+                        <li>页面加载时检测时间并切换模式<br>
+                        Detect time and switch mode on page load</li>
+                        <li>导航栏主题组件包装器设计<br>
+                        Navbar theme component wrapper design</li>
+                        <li>支持中英文页面<br>
+                        Support for Chinese and English pages</li>
+                    </ul>
+                </li>
+                <li>广告系统 / Banner System
+                    <ul>
+                        <li>顶部广告条（打开页面展开，5秒后收起）<br>
+                        Top banner (expanded on page load, collapsed after 5 seconds)</li>
+                        <li>右上角实时倒计时显示<br>
+                        Real-time countdown display at top-right corner</li>
+                        <li>收起后不占用页面空间<br>
+                        Does not occupy space after collapsing</li>
+                        <li>平滑过渡动画效果<br>
+                        Smooth transition animation effect</li>
+                        <li>广告组件独立为组件<br>
+                        Banner component independent as a component</li>
+                        <li>JSON广告库支持多种广告内容<br>
+                        JSON banner data library supports multiple banner contents</li>
+                        <li>支持中英文标题、正文、按钮文案和按钮链接<br>
+                        Support for Chinese/English titles, content, button text and button links</li>
+                        <li>每次刷新随机调用一组广告<br>
+                        Random banner selection on each refresh</li>
+                    </ul>
+                </li>
+                <li>主页描述文字轮播 / Hero Text Carousel
+                    <ul>
+                        <li>主页描述文字每1秒自动切换<br>
+                        Hero description text auto-switches every 1 second</li>
+                        <li>淡入淡出过渡动画效果<br>
+                        Fade in/out transition animation effect</li>
+                        <li>包含5条描述性文字<br>
+                        Contains 5 descriptive texts</li>
+                        <li>支持中英文页面<br>
+                        Support for Chinese and English pages</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>创建文件 / Created Files:</h3>
+            <ul>
+                <li>css/dark-mode.css - 深色模式样式文件<br>
+                css/dark-mode.css - Dark mode stylesheet</li>
+                <li>css/banner.css - 广告条样式文件<br>
+                css/banner.css - Banner stylesheet</li>
+                <li>js/theme-switcher.js - 主题切换逻辑<br>
+                js/theme-switcher.js - Theme switching logic</li>
+                <li>js/banner-loader.js - 广告加载逻辑<br>
+                js/banner-loader.js - Banner loading logic</li>
+                <li>js/banner-data.json - 广告数据JSON库<br>
+                js/banner-data.json - Banner data JSON library</li>
+                <li>components/banner.html - 广告组件模板<br>
+                components/banner.html - Banner component template</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>修改文件 / Modified Files:</h3>
+            <ul>
+                <li>components/navbar.html - 添加主题切换按钮<br>
+                components/navbar.html - Added theme toggle buttons</li>
+                <li>js/navbar-loader.js - 添加主题按钮文字配置和图标更新<br>
+                js/navbar-loader.js - Added theme button text configuration and icon updates</li>
+                <li>index.html - 添加主题系统和广告系统引用，移除内联代码<br>
+                index.html - Added theme and banner system references, removed inline code</li>
+                <li>en/index.html - 添加主题系统和广告系统引用，移除内联代码<br>
+                en/index.html - Added theme and banner system references, removed inline code</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>修复内容 / Fixes:</h3>
+            <ul>
+                <li>修复英文页面主题切换无反应的问题<br>
+                Fixed theme switching not working on English pages</li>
+                <li>修复页面加载时自动模式不检测时间的问题<br>
+                Fixed auto mode not detecting time on page load</li>
+                <li>修复广告组件DOM元素插入失败的问题（firstChild改为firstElementChild）<br>
+                Fixed banner component DOM element insertion failure (changed firstChild to firstElementChild)</li>
+            </ul>
+        </div>
+        <hr>
+
         <p><strong>日期：</strong>2026.04.04<br>
         <strong>Version：</strong>2026.04.04<br>
         <strong>版本号：</strong>γ.26.0404.1<br>
