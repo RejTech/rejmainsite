@@ -180,3 +180,78 @@ body.dark-mode .theme-component-wrapper {
 body.dark-mode .theme-label {
     color: var(--dark-text-secondary) !important;
 }
+
+body.dark-mode .license-container {
+    background-color: var(--dark-bg-secondary) !important;
+    color: var(--dark-text-primary) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .license-content {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .changelog-container {
+    background-color: var(--dark-bg-secondary) !important;
+    color: var(--dark-text-primary) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .changelog-content {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .changelog-content h3 {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .changelog-content ul {
+    color: var(--dark-text-secondary) !important;
+}
+
+body.dark-mode .changelog-content li {
+    color: var(--dark-text-secondary) !important;
+}
+
+body.dark-mode .changelog-content p {
+    color: var(--dark-text-secondary) !important;
+}
+
+body.dark-mode .changelog-content strong {
+    color: var(--dark-text-primary) !important;
+}
+
+body.dark-mode .changelog-content hr {
+    border-color: var(--dark-border) !important;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: var(--dark-bg-tertiary) !important;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+body.dark-mode .table th {
+    background-color: var(--dark-bg-card) !important;
+    color: var(--dark-text-primary) !important;
+    border-color: var(--dark-border) !important;
+}
+
+body.dark-mode .table td {
+    color: var(--dark-text-secondary) !important;
+    border-color: var(--dark-border) !important;
+}
+
+body.dark-mode .allowed {
+    color: #4ade80 !important;
+}
+
+body.dark-mode .forbidden {
+    color: #f87171 !important;
+}
+
+body.dark-mode .neutral {
+    color: var(--dark-text-secondary) !important;
+}
