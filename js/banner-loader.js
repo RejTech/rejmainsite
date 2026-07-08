@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const bannerHtml = `
             <div id="top-banner" class="top-banner">
+                <button id="banner-close-btn" class="banner-close-btn" aria-label="Close banner">×</button>
                 <div class="top-banner-content">
                     <div class="banner-title">${selectedBanner[titleKey]}</div>
                     <div class="banner-text">${selectedBanner[contentKey]}</div>
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         const banner = document.getElementById('top-banner');
         const countdown = document.getElementById('banner-countdown');
+        const closeBtn = document.getElementById('banner-close-btn');
         
         if (!banner) {
             console.error('Banner container not found');
@@ -54,6 +56,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!countdown) {
             console.error('Countdown element not found');
             return;
+        }
+        
+        const collapseBanner = () => {
+            if (banner) {
+                banner.classList.add('collapsed');
+            }
+            if (countdown) {
+                countdown.textContent = '';
+            }
+        };
+        
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                clearInterval(bannerTimer);
+                collapseBanner();
+            });
         }
         
         let seconds = 5;
@@ -66,12 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             } else {
                 clearInterval(bannerTimer);
-                if (banner) {
-                    banner.classList.add('collapsed');
-                }
-                if (countdown) {
-                    countdown.textContent = '';
-                }
+                collapseBanner();
             }
         }, 1000);
     } catch (error) {
