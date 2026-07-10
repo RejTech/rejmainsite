@@ -100,6 +100,92 @@
     <div class="changelog-container">
         <div class="changelog-content">
             <div class="section">
+                <p><strong>Date:</strong> 2026.07.10<br>
+                <strong>Version:</strong> 2026.07.10<br>
+                <strong>Version Number:</strong> γ.26.0710.1</p>
+                
+                <h3>Version Note:</h3>
+                <ul>
+                    <li>This update optimizes button visual effects and navbar styles, fixes button color issues in dark mode</li>
+                </ul>
+                
+                <h3>New Features:</h3>
+                <ul>
+                    <li>Button Icon System
+                        <ul>
+                            <li>Added icons to all site buttons (using SVG icons from symbols/sf directory)</li>
+                            <li>Home button uses house icon</li>
+                            <li>External link buttons use external link arrow icon</li>
+                            <li>Changelog button uses book icon</li>
+                            <li>Theme toggle buttons use clock/moon/sun icons</li>
+                            <li>Icons automatically invert color in dark mode</li>
+                        </ul>
+                    </li>
+                    <li>Menu Toggle Animation
+                        <ul>
+                            <li>Rewrote menu toggle button CSS for modern animation</li>
+                            <li>Shows three horizontal bars when collapsed</li>
+                            <li>Middle bar fades out, top and bottom bars rotate to form × when expanded</li>
+                            <li>Gray color scheme, no bounce animation</li>
+                            <li>Menu button automatically hidden on desktop</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Optimizations:</h3>
+                <ul>
+                    <li>Navbar Style Optimization
+                        <ul>
+                            <li>Removed navbar rounded corners and floating effect</li>
+                            <li>Navbar fixed at top, full screen width</li>
+                            <li>Reduced navbar blur (blur 10px → 5px)</li>
+                            <li>Reduced navbar opacity (0.9 → 0.6)</li>
+                            <li>Removed navbar entry animation</li>
+                        </ul>
+                    </li>
+                    <li>Dark Mode Optimization
+                        <ul>
+                            <li>Unified all button colors to cyan in dark mode</li>
+                            <li>Fixed btn-primary showing red in dark mode</li>
+                            <li>Fixed btn-danger/btn-warning/btn-success showing original colors in dark mode</li>
+                            <li>Banner button maintains light mode style, unaffected by theme</li>
+                        </ul>
+                    </li>
+                    <li>Banner and Navbar Position Optimization
+                        <ul>
+                            <li>Navbar automatically moves below banner when banner is expanded</li>
+                            <li>Navbar automatically returns to top when banner collapses</li>
+                            <li>Fixed navbar being covered by banner</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Created Files:</h3>
+                <ul>
+                    <li>css/btn-icons.css - Button icon stylesheet</li>
+                </ul>
+                
+                <h3>Modified Files:</h3>
+                <ul>
+                    <li>components/navbar.html - Replaced menu button icon with custom animation</li>
+                    <li>css/glass-navbar.css - Added menu button animation styles, removed rounded corners and floating effect</li>
+                    <li>css/dark-mode.css - Added dark mode button style overrides</li>
+                    <li>css/cyan-theme.css - Added styles for all button types in dark mode</li>
+                    <li>css/banner.css - Added independent banner button styles</li>
+                    <li>js/banner-loader.js - Added navbar position adjustment logic</li>
+                    <li>js/navbar-loader.js - Updated navbar style settings</li>
+                    <li>All page HTML - Added button icon class names</li>
+                </ul>
+                
+                <h3>Fixes:</h3>
+                <ul>
+                    <li>Fixed btn-primary button showing red in dark mode</li>
+                    <li>Fixed navbar being covered by banner</li>
+                    <li>Fixed menu button showing on desktop</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="section">
                 <p><strong>Date:</strong> 2026.07.06<br>
                 <strong>Version:</strong> 2026.07.06<br>
                 <strong>Version Number:</strong> γ.26.0706.1</p>

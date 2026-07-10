@@ -100,6 +100,134 @@
     <h1 class="display-4 text-center mb-5">更新日志 (CHANGELOG)</h1>
     <div class="changelog-container">
         <div class="changelog-content">
+        <p><strong>日期：</strong>2026.07.10<br>
+        <strong>Version：</strong>2026.07.10<br>
+        <strong>版本号：</strong>γ.26.0710.1<br>
+        <strong>Version Number：</strong>γ.26.0710.1</p>
+        <div class="section">
+            <h3>版本说明 / Version Note:</h3>
+            <ul>
+                <li>本次更新优化了按钮视觉效果和导航栏样式，修复了深色模式下按钮颜色问题<br>
+                This update optimizes button visual effects and navbar styles, fixes button color issues in dark mode</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>新功能 / New Features:</h3>
+            <ul>
+                <li>按钮图标系统 / Button Icon System
+                    <ul>
+                        <li>为全站按钮添加图标（使用symbols/sf目录下的SVG图标）<br>
+                        Added icons to all site buttons (using SVG icons from symbols/sf directory)</li>
+                        <li>返回主页按钮使用房子图标<br>
+                        Home button uses house icon</li>
+                        <li>外部链接按钮使用外部链接箭头图标<br>
+                        External link buttons use external link arrow icon</li>
+                        <li>更新日志按钮使用书本图标<br>
+                        Changelog button uses book icon</li>
+                        <li>主题切换按钮使用时钟/月亮/太阳图标<br>
+                        Theme toggle buttons use clock/moon/sun icons</li>
+                        <li>深色模式下图标自动反转颜色<br>
+                        Icons automatically invert color in dark mode</li>
+                    </ul>
+                </li>
+                <li>菜单展开按钮动画 / Menu Toggle Animation
+                    <ul>
+                        <li>重写菜单展开按钮CSS，实现现代风格动画<br>
+                        Rewrote menu toggle button CSS for modern animation</li>
+                        <li>折叠时显示三条横杠<br>
+                        Shows three horizontal bars when collapsed</li>
+                        <li>展开时中间横杠淡出，上下两条旋转形成×形状<br>
+                        Middle bar fades out, top and bottom bars rotate to form × when expanded</li>
+                        <li>灰色配色，无回弹动画<br>
+                        Gray color scheme, no bounce animation</li>
+                        <li>电脑界面自动隐藏菜单按钮<br>
+                        Menu button automatically hidden on desktop</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>优化内容 / Optimizations:</h3>
+            <ul>
+                <li>导航栏样式优化 / Navbar Style Optimization
+                    <ul>
+                        <li>移除导航栏圆角和悬空效果<br>
+                        Removed navbar rounded corners and floating effect</li>
+                        <li>导航栏固定在顶部，全屏宽度<br>
+                        Navbar fixed at top, full screen width</li>
+                        <li>减少导航栏模糊度（blur 10px → 5px）<br>
+                        Reduced navbar blur (blur 10px → 5px)</li>
+                        <li>降低导航栏透明度（0.9 → 0.6）<br>
+                        Reduced navbar opacity (0.9 → 0.6)</li>
+                        <li>删除导航栏进入动画<br>
+                        Removed navbar entry animation</li>
+                    </ul>
+                </li>
+                <li>深色模式优化 / Dark Mode Optimization
+                    <ul>
+                        <li>统一深色模式下所有按钮颜色为青色系<br>
+                        Unified all button colors to cyan in dark mode</li>
+                        <li>修复btn-primary在深色模式下显示红色的问题<br>
+                        Fixed btn-primary showing red in dark mode</li>
+                        <li>修复btn-danger/btn-warning/btn-success在深色模式下显示原色的问题<br>
+                        Fixed btn-danger/btn-warning/btn-success showing original colors in dark mode</li>
+                        <li>广告按钮保持浅色模式样式，不受深浅色影响<br>
+                        Banner button maintains light mode style, unaffected by theme</li>
+                    </ul>
+                </li>
+                <li>广告与导航栏位置优化 / Banner and Navbar Position Optimization
+                    <ul>
+                        <li>广告展开时导航栏自动下移到广告下方<br>
+                        Navbar automatically moves below banner when banner is expanded</li>
+                        <li>广告收起后导航栏自动回到顶部<br>
+                        Navbar automatically returns to top when banner collapses</li>
+                        <li>修复导航栏被广告遮挡的问题<br>
+                        Fixed navbar being covered by banner</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>创建文件 / Created Files:</h3>
+            <ul>
+                <li>css/btn-icons.css - 按钮图标样式文件<br>
+                css/btn-icons.css - Button icon stylesheet</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>修改文件 / Modified Files:</h3>
+            <ul>
+                <li>components/navbar.html - 替换菜单按钮图标为自定义动画<br>
+                components/navbar.html - Replaced menu button icon with custom animation</li>
+                <li>css/glass-navbar.css - 添加菜单按钮动画样式，移除圆角和悬空效果<br>
+                css/glass-navbar.css - Added menu button animation styles, removed rounded corners and floating effect</li>
+                <li>css/dark-mode.css - 添加深色模式按钮样式覆盖<br>
+                css/dark-mode.css - Added dark mode button style overrides</li>
+                <li>css/cyan-theme.css - 添加深色模式下所有按钮类型的样式<br>
+                css/cyan-theme.css - Added styles for all button types in dark mode</li>
+                <li>css/banner.css - 添加广告按钮独立样式<br>
+                css/banner.css - Added independent banner button styles</li>
+                <li>js/banner-loader.js - 添加导航栏位置调整逻辑<br>
+                js/banner-loader.js - Added navbar position adjustment logic</li>
+                <li>js/navbar-loader.js - 更新导航栏样式设置<br>
+                js/navbar-loader.js - Updated navbar style settings</li>
+                <li>所有页面HTML - 添加按钮图标类名<br>
+                All page HTML - Added button icon class names</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>修复内容 / Fixes:</h3>
+            <ul>
+                <li>修复深色模式下btn-primary按钮显示红色的问题<br>
+                Fixed btn-primary button showing red in dark mode</li>
+                <li>修复导航栏被广告遮挡的问题<br>
+                Fixed navbar being covered by banner</li>
+                <li>修复菜单按钮在电脑界面显示的问题<br>
+                Fixed menu button showing on desktop</li>
+            </ul>
+        </div>
+        <hr>
+
         <p><strong>日期：</strong>2026.07.06<br>
         <strong>Version：</strong>2026.07.06<br>
         <strong>版本号：</strong>γ.26.0706.1<br>

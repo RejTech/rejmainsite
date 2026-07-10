@@ -163,21 +163,4 @@
     padding-left: 24px;
 }
 
-body.dark-mode .btn-icon-home,
-body.dark-mode .btn-icon-external,
-body.dark-mode .btn-icon-changelog,
-body.dark-mode .btn-icon-next,
-body.dark-mode .btn-icon-prev,
-body.dark-mode .btn-icon-search,
-body.dark-mode .btn-icon-play,
-body.dark-mode .btn-icon-video,
-body.dark-mode .btn-icon-live,
-body.dark-mode .btn-icon-about,
-body.dark-mode .btn-icon-community,
-body.dark-mode .btn-icon-license,
-body.dark-mode .btn-icon-dark,
-body.dark-mode .btn-icon-light,
-body.dark-mode .btn-icon-auto,
-body.dark-mode .btn-icon-manual {
-    filter: invert(1);
-}
+

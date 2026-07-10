@@ -1,3 +1,192 @@
+日期2026.07.10
+Version 2026.07.10
+版本号-γ.26.0710.1
+Version Number-γ.26.0710.1
+
+### 版本说明 / Version Note:
+- 本次更新优化了按钮视觉效果和导航栏样式，修复了深色模式下按钮颜色问题
+  This update optimizes button visual effects and navbar styles, fixes button color issues in dark mode
+
+### 新功能 / New Features:
+- 按钮图标系统
+  Button Icon System
+  - 为全站按钮添加图标（使用symbols/sf目录下的SVG图标）
+    Added icons to all site buttons (using SVG icons from symbols/sf directory)
+  - 返回主页按钮使用房子图标
+    Home button uses house icon
+  - 外部链接按钮使用外部链接箭头图标
+    External link buttons use external link arrow icon
+  - 更新日志按钮使用书本图标
+    Changelog button uses book icon
+  - 主题切换按钮使用时钟/月亮/太阳图标
+    Theme toggle buttons use clock/moon/sun icons
+  - 深色模式下图标自动反转颜色
+    Icons automatically invert color in dark mode
+
+- 菜单展开按钮动画
+  Menu Toggle Animation
+  - 重写菜单展开按钮CSS，实现现代风格动画
+    Rewrote menu toggle button CSS for modern animation
+  - 折叠时显示三条横杠
+    Shows three horizontal bars when collapsed
+  - 展开时中间横杠淡出，上下两条旋转形成×形状
+    Middle bar fades out, top and bottom bars rotate to form × when expanded
+  - 灰色配色，无回弹动画
+    Gray color scheme, no bounce animation
+  - 电脑界面自动隐藏菜单按钮
+    Menu button automatically hidden on desktop
+
+### 优化内容 / Optimizations:
+- 导航栏样式优化
+  Navbar Style Optimization
+  - 移除导航栏圆角和悬空效果
+    Removed navbar rounded corners and floating effect
+  - 导航栏固定在顶部，全屏宽度
+    Navbar fixed at top, full screen width
+  - 减少导航栏模糊度（blur 10px → 5px）
+    Reduced navbar blur (blur 10px → 5px)
+  - 降低导航栏透明度（0.9 → 0.6）
+    Reduced navbar opacity (0.9 → 0.6)
+  - 删除导航栏进入动画
+    Removed navbar entry animation
+
+- 深色模式优化
+  Dark Mode Optimization
+  - 统一深色模式下所有按钮颜色为青色系
+    Unified all button colors to cyan in dark mode
+  - 修复btn-primary在深色模式下显示红色的问题
+    Fixed btn-primary showing red in dark mode
+  - 修复btn-danger/btn-warning/btn-success在深色模式下显示原色的问题
+    Fixed btn-danger/btn-warning/btn-success showing original colors in dark mode
+  - 广告按钮保持浅色模式样式，不受深浅色影响
+    Banner button maintains light mode style, unaffected by theme
+
+- 广告与导航栏位置优化
+  Banner and Navbar Position Optimization
+  - 广告展开时导航栏自动下移到广告下方
+    Navbar automatically moves below banner when banner is expanded
+  - 广告收起后导航栏自动回到顶部
+    Navbar automatically returns to top when banner collapses
+  - 修复导航栏被广告遮挡的问题
+    Fixed navbar being covered by banner
+
+### 创建文件 / Created Files:
+- css/btn-icons.css - 按钮图标样式文件
+  css/btn-icons.css - Button icon stylesheet
+
+### 修改文件 / Modified Files:
+- components/navbar.html - 替换菜单按钮图标为自定义动画
+  components/navbar.html - Replaced menu button icon with custom animation
+- css/glass-navbar.css - 添加菜单按钮动画样式，移除圆角和悬空效果
+  css/glass-navbar.css - Added menu button animation styles, removed rounded corners and floating effect
+- css/dark-mode.css - 添加深色模式按钮样式覆盖
+  css/dark-mode.css - Added dark mode button style overrides
+- css/cyan-theme.css - 添加深色模式下所有按钮类型的样式
+  css/cyan-theme.css - Added styles for all button types in dark mode
+- css/banner.css - 添加广告按钮独立样式
+  css/banner.css - Added independent banner button styles
+- js/banner-loader.js - 添加导航栏位置调整逻辑
+  js/banner-loader.js - Added navbar position adjustment logic
+- js/navbar-loader.js - 更新导航栏样式设置
+  js/navbar-loader.js - Updated navbar style settings
+- 所有页面HTML - 添加按钮图标类名
+  All page HTML - Added button icon class names
+
+### 修复内容 / Fixes:
+- 修复深色模式下btn-primary按钮显示红色的问题
+  Fixed btn-primary button showing red in dark mode
+- 修复导航栏被广告遮挡的问题
+  Fixed navbar being covered by banner
+- 修复菜单按钮在电脑界面显示的问题
+  Fixed menu button showing on desktop
+
+日期2026.07.06
+Version 2026.07.06
+版本号-γ.26.0706.1
+Version Number-γ.26.0706.1
+
+### 版本说明 / Version Note:
+- 本次更新添加了主题系统和广告系统，实现了根据时间自动切换深浅色模式和顶部广告条功能
+  This update adds theme system and banner system, implementing automatic dark/light mode switching based on time and top banner functionality
+
+### 新功能 / New Features:
+- 主题系统
+  Theme System
+  - 根据时间自动切换深浅色模式（6:00-18:00浅色，18:00-6:00深色）
+    Automatic dark/light mode switching based on time (light 6:00-18:00, dark 18:00-6:00)
+  - 手动切换模式（浅色/深色）
+    Manual mode switching (light/dark)
+  - 自动模式开关（自动切换/手动切换）
+    Auto mode toggle (auto switch/manual switch)
+  - 页面加载时检测时间并切换模式
+    Detect time and switch mode on page load
+  - 导航栏主题组件包装器设计
+    Navbar theme component wrapper design
+  - 支持中英文页面
+    Support for Chinese and English pages
+
+- 广告系统
+  Banner System
+  - 顶部广告条（打开页面展开，5秒后收起）
+    Top banner (expanded on page load, collapsed after 5 seconds)
+  - 右上角实时倒计时显示
+    Real-time countdown display at top-right corner
+  - 收起后不占用页面空间
+    Does not occupy space after collapsing
+  - 平滑过渡动画效果
+    Smooth transition animation effect
+  - 广告组件独立为组件
+    Banner component independent as a component
+  - JSON广告库支持多种广告内容
+    JSON banner data library supports multiple banner contents
+  - 支持中英文标题、正文、按钮文案和按钮链接
+    Support for Chinese/English titles, content, button text and button links
+  - 每次刷新随机调用一组广告
+    Random banner selection on each refresh
+
+- 主页描述文字轮播
+  Hero Text Carousel
+  - 主页描述文字每1秒自动切换
+    Hero description text auto-switches every 1 second
+  - 淡入淡出过渡动画效果
+    Fade in/out transition animation effect
+  - 包含5条描述性文字
+    Contains 5 descriptive texts
+  - 支持中英文页面
+    Support for Chinese and English pages
+
+### 创建文件 / Created Files:
+- css/dark-mode.css - 深色模式样式文件
+  css/dark-mode.css - Dark mode stylesheet
+- css/banner.css - 广告条样式文件
+  css/banner.css - Banner stylesheet
+- js/theme-switcher.js - 主题切换逻辑
+  js/theme-switcher.js - Theme switching logic
+- js/banner-loader.js - 广告加载逻辑
+  js/banner-loader.js - Banner loading logic
+- js/banner-data.json - 广告数据JSON库
+  js/banner-data.json - Banner data JSON library
+- components/banner.html - 广告组件模板
+  components/banner.html - Banner component template
+
+### 修改文件 / Modified Files:
+- components/navbar.html - 添加主题切换按钮
+  components/navbar.html - Added theme toggle buttons
+- js/navbar-loader.js - 添加主题按钮文字配置和图标更新
+  js/navbar-loader.js - Added theme button text configuration and icon updates
+- index.html - 添加主题系统和广告系统引用，移除内联代码
+  index.html - Added theme and banner system references, removed inline code
+- en/index.html - 添加主题系统和广告系统引用，移除内联代码
+  en/index.html - Added theme and banner system references, removed inline code
+
+### 修复内容 / Fixes:
+- 修复英文页面主题切换无反应的问题
+  Fixed theme switching not working on English pages
+- 修复页面加载时自动模式不检测时间的问题
+  Fixed auto mode not detecting time on page load
+- 修复广告组件DOM元素插入失败的问题（firstChild改为firstElementChild）
+  Fixed banner component DOM element insertion failure (changed firstChild to firstElementChild)
+
 日期2026.04.04
 Version 2026.04.04
 版本号-γ.26.0404.1
