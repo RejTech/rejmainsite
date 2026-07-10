@@ -58,6 +58,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
         
+        const updateNavbarPosition = (topOffset) => {
+            const navbar = document.querySelector('.glass-navbar');
+            if (navbar) {
+                navbar.style.top = topOffset + 'px';
+            }
+        };
+        
+        const waitForNavbarAndUpdate = () => {
+            const navbar = document.querySelector('.glass-navbar');
+            if (navbar) {
+                const bannerHeight = banner.offsetHeight;
+                updateNavbarPosition(bannerHeight);
+            } else {
+                setTimeout(waitForNavbarAndUpdate, 50);
+            }
+        };
+        
+        setTimeout(waitForNavbarAndUpdate, 100);
+        
         const collapseBanner = () => {
             if (banner) {
                 banner.classList.add('collapsed');
@@ -65,6 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (countdown) {
                 countdown.textContent = '';
             }
+            updateNavbarPosition(0);
         };
         
         if (closeBtn) {

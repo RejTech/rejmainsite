@@ -127,20 +127,22 @@ class NavbarLoader {
                 navbarContainer.innerHTML = renderedNavbar;
                 console.log('NavbarLoader: Navbar inserted into container');
                 
-                // 设置 sticky 样式
                 const navbar = navbarContainer.querySelector('nav');
                 if (navbar) {
                     navbar.style.position = 'fixed';
-                    navbar.style.top = '10px';
+                    navbar.style.left = '0';
+                    navbar.style.right = '0';
                     navbar.style.zIndex = '1030';
-                    navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
-                    navbar.style.webkitBackdropFilter = 'blur(20px) saturate(180%)';
+                    navbar.style.backdropFilter = 'blur(5px)';
+                    navbar.style.webkitBackdropFilter = 'blur(5px)';
                     navbar.style.background = 'rgba(255, 255, 255, 0.6)';
-                    navbar.style.borderRadius = '50px';
-                    navbar.style.margin = '10px auto';
-                    navbar.style.maxWidth = '98%';
-                    navbar.style.border = '1px solid rgba(255, 255, 255, 0.3)';
-                    navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1), 0 0 15px rgba(255, 255, 255, 0.3)';
+                    navbar.style.borderRadius = '0';
+                    navbar.style.margin = '0';
+                    navbar.style.maxWidth = '100%';
+                    navbar.style.border = 'none';
+                    navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+                    navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                    
                     console.log('NavbarLoader: Sticky styles applied');
                 }
             }

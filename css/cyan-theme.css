@@ -68,3 +68,97 @@
 .card:hover {
     box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
 }
+
+body.dark-mode .btn-primary {
+    background-color: rgba(0, 188, 212, 0.8) !important;
+    border-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: rgba(0, 188, 212, 0.2) !important;
+    border-color: #00bcd4 !important;
+    color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: rgba(0, 188, 212, 0.4) !important;
+}
+
+body.dark-mode .btn-outline-primary {
+    color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-outline-secondary {
+    color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-light {
+    background-color: rgba(0, 188, 212, 0.2) !important;
+    border-color: #00bcd4 !important;
+    color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-light:hover {
+    background-color: rgba(0, 188, 212, 0.4) !important;
+}
+
+body.dark-mode .btn-danger {
+    background-color: rgba(0, 188, 212, 0.8) !important;
+    border-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-danger:hover {
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-outline-danger {
+    color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-outline-danger:hover {
+    background-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-warning {
+    background-color: rgba(0, 188, 212, 0.6) !important;
+    border-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-warning:hover {
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}
+
+body.dark-mode .btn-success {
+    background-color: rgba(0, 188, 212, 0.8) !important;
+    border-color: #00bcd4 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .btn-success:hover {
+    background-color: #00bcd4 !important;
+    border-color: #00bcd4 !important;
+}

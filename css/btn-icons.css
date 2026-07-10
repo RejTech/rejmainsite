@@ -1,0 +1,183 @@
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.btn-icon-left svg {
+    order: -1;
+}
+
+.btn-icon-right svg {
+    order: 1;
+}
+
+.btn-icon-home svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-icon-home {
+    background-image: url('../symbols/sf/Gaming/house.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-external svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-icon-external {
+    background-image: url('../symbols/sf/Arrows/arrow.up.right.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    padding-right: 32px;
+}
+
+.btn-icon-changelog {
+    background-image: url('../symbols/sf/Arrows/book.closed.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-next {
+    background-image: url('../symbols/sf/Arrows/chevron.right.svg');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px 14px;
+    padding-right: 28px;
+}
+
+.btn-icon-prev {
+    background-image: url('../symbols/sf/Arrows/chevron.left.svg');
+    background-repeat: no-repeat;
+    background-position: left 8px center;
+    background-size: 14px 14px;
+    padding-left: 28px;
+}
+
+.btn-icon-search {
+    background-image: url('../symbols/sf/Object tools/magnifyingglass.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-play {
+    background-image: url('../symbols/sf/Media/play.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-video {
+    background-image: url('../symbols/sf/Communication/video.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-live {
+    background-image: url('../symbols/sf/Communication/video.badge.plus.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-about {
+    background-image: url('../symbols/sf/Shapes/square.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-community {
+    background-image: url('../symbols/sf/Human/person.2.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-license {
+    background-image: url('../symbols/sf/Shapes/shield.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    background-size: 16px 16px;
+    padding-left: 32px;
+}
+
+.btn-icon-close {
+    background-image: url('../symbols/sf/Gaming/xmark.circle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
+
+.btn-icon-dark {
+    background-image: url('../symbols/sf/Weather/moon.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 6px center;
+    background-size: 14px 14px;
+    padding-left: 24px;
+}
+
+.btn-icon-light {
+    background-image: url('../symbols/sf/Weather/sun.max.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 6px center;
+    background-size: 14px 14px;
+    padding-left: 24px;
+}
+
+.btn-icon-auto {
+    background-image: url('../symbols/sf/Time/clock.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 6px center;
+    background-size: 14px 14px;
+    padding-left: 24px;
+}
+
+.btn-icon-manual {
+    background-image: url('../symbols/sf/Human/hand.wave.fill.svg');
+    background-repeat: no-repeat;
+    background-position: left 6px center;
+    background-size: 14px 14px;
+    padding-left: 24px;
+}
+
+body.dark-mode .btn-icon-home,
+body.dark-mode .btn-icon-external,
+body.dark-mode .btn-icon-changelog,
+body.dark-mode .btn-icon-next,
+body.dark-mode .btn-icon-prev,
+body.dark-mode .btn-icon-search,
+body.dark-mode .btn-icon-play,
+body.dark-mode .btn-icon-video,
+body.dark-mode .btn-icon-live,
+body.dark-mode .btn-icon-about,
+body.dark-mode .btn-icon-community,
+body.dark-mode .btn-icon-license,
+body.dark-mode .btn-icon-dark,
+body.dark-mode .btn-icon-light,
+body.dark-mode .btn-icon-auto,
+body.dark-mode .btn-icon-manual {
+    filter: invert(1);
+}
