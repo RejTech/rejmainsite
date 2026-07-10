@@ -129,7 +129,8 @@ class NavbarLoader {
                 
                 const navbar = navbarContainer.querySelector('nav');
                 if (navbar) {
-                    navbar.style.position = 'fixed';
+                    navbar.style.position = 'sticky';
+                    navbar.style.top = '0';
                     navbar.style.left = '0';
                     navbar.style.right = '0';
                     navbar.style.zIndex = '1030';
