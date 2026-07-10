@@ -255,3 +255,7 @@ body.dark-mode .forbidden {
 body.dark-mode .neutral {
     color: var(--dark-text-secondary) !important;
 }
+
+body.dark-mode .live-container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}

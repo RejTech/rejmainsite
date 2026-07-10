@@ -66,8 +66,17 @@
         body > div.content-section:nth-child(3) {
             animation-delay: 1.0s;
         }
-        /* iframe鍔ㄧ敾 */
-        iframe {
+        .live-container {
+            width: 50%;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .live-container iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
             opacity: 0;
             animation: fadeInUp 0.6s ease forwards;
             animation-delay: 1.2s;
@@ -97,8 +106,9 @@
         <p class="col-md-8 fs-4">这里为你提供与Bilibili同步的直播</p>
     </div>
 </div>
-<iframe width=100% height="450"
-        src="https://www.bilibili.com/blackboard/live/live-mobile-playerV3.html?roomId=26504347&danmaku=1" frameborder="0"></iframe>
+<div class="live-container">
+    <iframe src="https://www.bilibili.com/blackboard/live/live-mobile-playerV3.html?roomId=26504347&danmaku=1"></iframe>
+</div>
 
 <footer class="mt-5 py-3 bg-light text-center">
     <div class="version-container"></div>
