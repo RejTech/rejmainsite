@@ -1,0 +1,70 @@
+:root {
+    --cyan-primary: #00bcd4;
+    --cyan-primary-hover: #0097a7;
+    --cyan-secondary: #e0f7fa;
+    --cyan-text: #ffffff;
+    --cyan-border: #00bcd4;
+}
+
+.btn-primary {
+    background-color: var(--cyan-primary) !important;
+    border-color: var(--cyan-border) !important;
+    color: var(--cyan-text) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--cyan-primary-hover) !important;
+    border-color: var(--cyan-primary-hover) !important;
+}
+
+.btn-secondary {
+    background-color: var(--cyan-secondary) !important;
+    border-color: var(--cyan-border) !important;
+    color: #333 !important;
+}
+
+.btn-secondary:hover {
+    background-color: #b2ebf2 !important;
+    border-color: var(--cyan-primary) !important;
+}
+
+.btn-outline-primary {
+    color: var(--cyan-primary) !important;
+    border-color: var(--cyan-primary) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--cyan-primary) !important;
+    border-color: var(--cyan-border) !important;
+    color: var(--cyan-text) !important;
+}
+
+.btn-outline-secondary {
+    color: var(--cyan-primary) !important;
+    border-color: var(--cyan-primary) !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--cyan-primary) !important;
+    border-color: var(--cyan-border) !important;
+    color: var(--cyan-text) !important;
+}
+
+.btn-light {
+    background-color: var(--cyan-secondary) !important;
+    border-color: var(--cyan-border) !important;
+    color: #333 !important;
+}
+
+.btn-light:hover {
+    background-color: #b2ebf2 !important;
+    border-color: var(--cyan-primary) !important;
+}
+
+.card {
+    border-color: rgba(0, 188, 212, 0.3) !important;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
+}
